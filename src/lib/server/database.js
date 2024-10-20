@@ -1,9 +1,12 @@
+import postgres from 'postgres';
 
-import postgres from 'postgres'
+// Access environment variable directly from process.env
+const connectionString = process.env.PGCONNECT || process.env.DATABASE_URL;
 
-// see env variables in .env
-import {PGCONNECT} from '$env/static/private';
+if (!connectionString) {
+    throw new Error('Missing database connection string!');
+}
 
-const sql = postgres(PGCONNECT, {} )
+const sql = postgres(connectionString, {});
 
 export default sql;
