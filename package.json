@@ -28,5 +28,8 @@
 	"dependencies": {
 		"postgres": "^3.4.4",
 		"vite-plugin-mkcert": "^1.17.5"
+	},
+	"engines": {
+		"node": ">=18.x.x"
 	}
 }
